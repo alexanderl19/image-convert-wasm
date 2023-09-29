@@ -1,8 +1,11 @@
 [package]
 name = "image-convert-wasm"
-version = "0.1.0"
+description = "WASM package to resize images by height, width, or both."
+repository = "https://github.com/alexanderl19/image-convert-wasm"
+license = "MIT"
+version = "1.0.0"
 authors = ["Alexander Liu <a@alexanderliu.com>"]
-edition = "2018"
+edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -23,7 +26,6 @@ image = { version = "0.24.7", default-features = false, features = [
   "jpeg",
   "png",
 ] }
-
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.34"
