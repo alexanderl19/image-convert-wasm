@@ -1,5 +1,5 @@
 [package]
-name = "image-convert-wasm"
+name = "image-resize-wasm"
 description = "WASM package to resize images by height, width, or both."
 repository = "https://github.com/alexanderl19/image-convert-wasm"
 license = "MIT"
