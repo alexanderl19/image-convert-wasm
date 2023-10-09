@@ -12,6 +12,28 @@ This package uses [wasm-pack](https://rustwasm.github.io/wasm-pack/) as a build 
 
 <https://vercel.com/docs/functions/edge-functions/wasm>
 
+> **Warning**
+> This example is currently **nonfunctional**!
+
+The following example works with `vercel dev`, but failes to deploy with the following error:
+
+```bash
+Error: The Edge Function "api/[resize]" is referencing unsupported modules:
+        - image-resize-wasm: vc-blob-asset:image_resize_wasm_bg.wasm
+```
+
+I was eventually able to "fix" the build by manually changing the build outputs, however I couldn't get the example working.
+
+```bash
+RuntimeError: unreachable
+    at (wasm://wasm/001256da:1:169628)
+    at (wasm://wasm/001256da:1:209588)
+    at (wasm://wasm/001256da:1:186105)
+    at (wasm://wasm/001256da:1:193864)
+    at (node_modules/.pnpm/image-resize-wasm@1.1.8/node_modules/image-resize-wasm/image_resize_wasm_bg.js:48:0)
+    at (api/[resize].js:44:62)
+```
+
 ```ts
 // api/index.ts
 // http://localhost:3000/api?url=https://example.com/example.png&w=1024
@@ -66,6 +88,13 @@ export default async function handler(request: Request) {
 
 ```bash
 wasm-pack build --target web
+```
+
+### Publish
+
+```bash
+cd pkg
+pnpm publish
 ```
 
 ## License

@@ -3,7 +3,7 @@ name = "image-resize-wasm"
 description = "WASM package to resize images by height, width, or both."
 repository = "https://github.com/alexanderl19/image-resize-wasm"
 license = "MIT"
-version = "1.0.1"
+version = "1.2.0"
 authors = ["Alexander Liu <a@alexanderliu.com>"]
 edition = "2021"
 
